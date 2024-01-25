@@ -5,7 +5,7 @@ function MapPage() {
 
     const { isLoaded } = useJsApiLoader({
       id: 'google-map-script',
-      googleMapsApiKey: "AIzaSyBxvGHif3riFnCq5fSrVuhu84JjizKnywc"
+      googleMapsApiKey: "YOUR KEY"
     });
 
     const position ={
