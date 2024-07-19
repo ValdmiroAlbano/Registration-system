@@ -51,7 +51,7 @@ class UsuarioController{
 
       loginUsuario(req, res) {
         const { nome, senha } = req.body;
-    
+
         if (!nome || !senha) {
             return res.status(422).json({ msg: 'Nome e senha são obrigatórios.' });
         }
@@ -87,8 +87,7 @@ class UsuarioController{
                     nivel_acesso: results[0].nivel_acesso
                 };
 
-                const token = jwt.sign( usuario, secret,{expiresIn: '30s'}
-                );
+                const token = jwt.sign( usuario, secret,{expiresIn: '30s'});
                 res.status(200).json({ msg:'Autenticação realizada com sucesso', token });
             });
         } catch (error) {
@@ -105,7 +104,7 @@ class UsuarioController{
             res.json(results)
         });
     }
-
+    
     async atualizarUsuario(req, res){
         const {id} = req.params;
         const {nome, senha, email} = req.body;
